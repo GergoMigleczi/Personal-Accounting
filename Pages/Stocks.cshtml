@@ -1,0 +1,85 @@
+﻿@page
+@model PersonalAccounting.Pages.StocksModel
+@{
+    ViewData["Title"] = "Stocks";
+}
+
+<table class="body-table">
+    <tr>
+        <td colspan="2">
+            <div class="title-background-add">
+                <h1 style="text-align: center">Stocks</h1>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="currency-block">
+            <table class="center" style="width: 90%">
+                <thead>
+                    <tr>
+                        <td class="table-border" style="width:15%">
+                            Date
+                        </td>
+                        <td class="table-border" style="width:10%">
+                            Stock Name
+                        </td>
+                        <td class="table-border" style="width:10%">
+                            Bought for
+                        </td>
+                        <td class="table-border" style="width:10%">
+                            Sold for
+                        </td>
+                        <td class="table-border" style="width:35%">
+                            Description
+                        </td>
+                        <td class="table-border" style="width:20%">
+                            Options
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    @foreach (var item in Model.Stocks)
+                    {
+                        <tr>
+                            <td class="table-body" style="width: 15%">
+                                @item.Date
+                            </td>
+                            <td class="table-body" style="width:10%">
+                                @item.StockName
+                            </td>
+                            <td class="table-body" style="width:10%">
+                                $ @item.Buy
+                            </td>
+                            <td class="table-body" style="width:10%">
+                                $ @item.Sell
+                            </td>
+                            <td class="table-body" style="width:35%">
+                                @item.Description
+                            </td>
+                            <td class="table-body" style="width:20%">
+                                <form method="post">
+                                    <a asp-page="/EditStocks" asp-route-id="@item.ID" class="btn btn-sm button-currency-sm">Edit</a>
+
+                                    <input type="submit" class="btn btn-danger btn-sm" value="Delete" />
+                                    <input type="hidden" value="@item.ID" name="ID" />
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="currency-block">
+            <a asp-page="/AddTransactions" asp-route-name="stocks" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Add Stocks</div>
+            </a>
+        </td>
+        <td class="currency-block">
+            <a asp-page="/Index" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Back To Balance</div>
+            </a>
+        </td>
+    </tr>
+</table>

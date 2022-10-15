@@ -1,0 +1,239 @@
+﻿@page "{name}"
+@model PersonalAccounting.Pages.CurrencyModel
+@{
+    ViewData["Title"] = "Transactions";
+}
+<table class="body-table">
+    <tr>
+        <td colspan="2">
+            <div class="title-background-add">
+                @switch (Model.Currency)
+                {
+                    case "eur":
+                        <h1 style="text-align: center">Euro</h1>
+                        break;
+                    case "gbp":
+                        <h1 style="text-align: center">Pound</h1>
+                        break;
+                    case "huf":
+                        <h1 style="text-align: center">Forint</h1>
+                        break;
+                    case "usd":
+                        <h1 style="text-align: center">US Dollar</h1>
+                        break;
+
+                }
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="currency-block" style="width: 100%">
+            <table class="center" style="width: 90%">
+                <thead>
+                    <tr>
+                        <td class="table-border" style="width:30%">
+                            Date
+                        </td>
+                        <td class="table-border" style="width: 15%">
+                            @Model.Currency.ToUpper()
+                        </td>
+                        <td class="table-border" style="width: 30%">
+                            Description
+                        </td>
+                        <td class="table-border" style="width: 25%">
+                            Options
+                        </td>
+                    </tr>
+                </thead>
+                @switch (Model.Currency.ToLower())
+                {
+                    case "eur":
+                        @foreach (var item in Model.Transactions)
+                        {
+                            if (item.Eur != 0.0)
+                            {
+                                <tbody class="table-body"> 
+                                    <tr>
+                                        <td class="table-body" style="width: 30%">
+                                            @item.Date
+                                        </td>
+                                        <td class="table-body" style="width: 15%">
+                                            € @item.Eur
+                                        </td>
+                                        <td class="table-body" style="flex:1 0 30%">
+                                            @item.Description
+                                        </td>
+                                        <td class="table-body" style="width: 25%">
+                                            <form method="post">
+                                                <a class="btn btn-sm button-currency-sm" asp-page="/EditTransactions" asp-route-id="@item.ID">Edit</a>
+
+                                                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                                                <input type="hidden" name="ID" value="@item.ID" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+
+                            }
+                        }
+                        <tfoot>
+                            <tr>
+                                <td class="table-border" style="width: 30%">
+                                    Total:
+                                </td>
+                                <td style="text-align: left; text-align: center">
+                                    € @Model.Total
+                                </td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tfoot>
+
+
+                        break;
+                    case "huf":
+                        @foreach (var item in Model.Transactions)
+                        {
+                            if (item.Huf != 0.0)
+                            {
+                                <tbody class="table-body"> 
+                                    <tr>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Date
+                                        </td>
+                                         <td class="table-body" style="width: 15%">
+                                            Ft @item.Huf
+                                        </td>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Description
+                                        </td>
+                                         <td class="table-body" style="width: 25%">
+                                            <form method="post">
+                                                <a class="btn btn-sm button-currency-sm" asp-page="/EditTransactions" asp-route-id="@item.ID">Edit</a>
+
+                                                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                                                <input type="hidden" name="ID" value="@item.ID" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+
+                            }
+                        }
+                        <tfoot>
+                            <tr>
+                                <td class="table-border" style="width: 30%">
+                                    Total:
+                                </td>
+                                <td style="text-align: left; text-align:center">
+                                    Ft @Model.Total
+                                </td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tfoot>
+                        break;
+                    case "gbp":
+                        @foreach (var item in Model.Transactions)
+                        {
+                            if (item.Gbp != 0.0)
+                            {
+                                <tbody class="table-body"> 
+                                    <tr>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Date
+                                        </td>
+                                         <td class="table-body" style="width: 15%">
+                                            £ @item.Gbp
+                                        </td>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Description
+                                        </td>
+                                         <td class="table-body" style="width: 25%">
+                                            <form method="post">
+                                                <a class="btn btn-sm button-currency-sm" asp-page="/EditTransactions" asp-route-id="@item.ID">Edit</a>
+
+                                                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                                                <input type="hidden" name="ID" value="@item.ID" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+
+                            }
+                        }
+                        <tfoot>
+                            <tr>
+                                <td class="table-border" style="width: 30%">
+                                    Total:
+                                </td>
+                                <td style="text-align: left; text-align: center">
+                                    £ @Model.Total
+                                </td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tfoot>
+
+                        break;
+                    case "usd":
+                        @foreach (var item in Model.Transactions)
+                        {
+                            if (item.Usd != 0.0)
+                            {
+                                <tbody class="table-body">
+                                    <tr>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Date
+                                        </td>
+                                         <td class="table-body" style="width: 15%">
+                                            $ @item.Usd
+                                        </td>
+                                         <td class="table-body" style="width: 30%">
+                                            @item.Description
+                                        </td>
+                                         <td class="table-body" style="width: 25%">
+                                            <form method="post">
+                                                <a class="btn btn-sm button-currency-sm" asp-page="/EditTransactions" asp-route-id="@item.ID">Edit</a>
+
+                                                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                                                <input type="hidden" name="ID" value="@item.ID" />
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                
+                            }
+                        }
+                        <tfoot>
+                            <tr>
+                                 <td class="table-border" style="width: 30%">
+                                    Total:
+                                </td>
+                                <td  style="text-align: left; text-align:center;">
+                                    $ @Model.Total
+                                </td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tfoot>
+
+                        break;
+
+
+                }
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="currency-block" style="width: 50%">
+            <a asp-page="/AddTransactions" asp-route-name="transactions" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Add Transaction</div>
+            </a>
+        </td>
+        <td class="currency-block" style="width: 50%">
+            <a asp-page="/Index" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Back to Balance</div>
+            </a>
+        </td>
+    </tr>
+</table>

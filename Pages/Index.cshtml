@@ -1,0 +1,60 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Balance";
+}
+
+
+
+<table class="body-table">
+    <tr>
+        <td colspan="4">
+            <div class="title-background">
+                <h1>Balance</h1>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="currency-block">
+            <div class=" div-padding">Pound</div>
+            <div class=" div-padding">£ @Model.GbpTotal</div>
+            <a asp-page="/Currency" asp-route-name="gbp" style="color: black" class="btn">
+                <div class="button-currency div-padding">£ Pound</div>
+            </a>
+        </td>
+        <td class="currency-block">
+            <div class=" div-padding">Forint</div>
+            <div class=" div-padding">Ft @Model.HufTotal</div>
+            <a asp-page="/Currency" asp-route-name="huf" style="color: black" class="btn">
+                <div class="button-currency div-padding">Ft Forint</div>
+            </a>
+        </td>
+        <td class="currency-block">
+            <div class=" div-padding">Euro</div>
+            <div class=" div-padding">€ @Model.EurTotal</div>
+            <a asp-page="/Currency" asp-route-name="eur" style="color: black" class="btn">
+                <div class="button-currency div-padding">€ Euro</div>
+            </a>
+        </td>
+        <td class="currency-block">
+            <div class=" div-padding">US Dollar</div>
+            <div class=" div-padding">$ @Model.UsdTotal</div>
+            <a asp-page="/Currency" asp-route-name="usd" style="color: black" class="btn">
+                <div class="button-currency div-padding">$ US Dollar</div>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="currency-block">
+            <a asp-page="/AddTransactions" asp-route-name="transactions" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Add transaction</div>
+            </a>       
+        </td>
+        <td colspan="2" class="currency-block">
+            <a asp-page="/AddTransactions" asp-route-name="stocks" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Add stocks</div>
+            </a>
+        </td>
+    </tr>
+</table>
+

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PersonalAccounting</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/stylesheet.css" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.png"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #e2c2a2">
+            <div class="container">
+                <a class="navbar-brand" style="color: #364450" asp-area="" asp-page="/Index"><img src="http://clipart-library.com/images_k/transparent-money-clipart/transparent-money-clipart-4.png" style="width: 40px"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/Currency" asp-route-name="gbp">Pound</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/Currency" asp-route-name="huf">Forint</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/Currency" asp-route-name="eur">Euro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/Currency" asp-route-name="usd">US Dollar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/AllTransactions">Transactions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: #364450" asp-area="" asp-page="/Stocks">Stocks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; Gergo Migleczi - 2022
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

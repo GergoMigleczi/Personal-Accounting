@@ -1,0 +1,92 @@
+﻿@page "{id}"
+@model PersonalAccounting.Pages.EditTransactionsModel
+@{
+    ViewData["Title"] = "Edit Transactions";
+}
+
+<table class="body-table">
+    <tr>
+        <td colspan="2">
+            <div class="title-background-add">
+                <h1 style="text-align: center">Edit transactions</h1>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="currency-block" style="width: 70%">
+            <form method="post">
+                <table class="center">
+                    <tr>
+                        <td class="form-1">
+                            <label>Date</label>
+                        </td>
+                        <td class="form-2">
+                            <input type="text" asp-for="CurrentT.Date" placeholder="@Model.CurrentT.Date" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-1">
+                            <label>Amount</label>
+                        </td>
+                        <td class="form-2">
+                            <input type="number" asp-for="Amount" placeholder="" />
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="form-1">
+                            <label>Description</label>
+                        </td>
+                        <td class="form-2">
+                            <textarea asp-for="CurrentT.Description" rows="1" placeholder="@Model.CurrentT.Description"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding-top: 20px">
+                            <button class="btn button-currency" type="submit" name="submit">Save</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+        </td>
+        <td class="currency-block" style="width: 30%">
+            <table class="center" style="border-collapse: separate; border-spacing: 10px 15px;">
+                <tr>
+                    <td class="current-balance">
+                        Pound: £ @Model.GbpTotal
+                    </td>
+                </tr>
+                <tr>
+                    <td class="current-balance">
+                        Forint: Ft @Model.HufTotal
+                    </td>
+                </tr>
+                <tr style="margin-bottom: 15px">
+                    <td class="current-balance">
+                        Euro: € @Model.EurTotal
+                    </td>
+                </tr>
+                <tr>
+                    <td class="current-balance">
+                        Us Dollar: $ @Model.UsdTotal
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="currency-block" style="width: 50%">
+            <a asp-page="/AllTransactions" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">View Transactions</div>
+            </a>
+        </td>
+        <td class="currency-block" style="width: 50%">
+            <a asp-page="/Index" style="color: black" class="btn">
+                <div class="button-currency div-padding" style="width: 200px;">Back To Balance</div>
+            </a>
+        </td>
+    </tr>
+</table>
+
