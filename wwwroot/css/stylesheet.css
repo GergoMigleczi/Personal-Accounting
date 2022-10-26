@@ -35,6 +35,8 @@ body {
     box-shadow: 0px 0px 15px #315e2c;
     color: #364450;
     font-weight: bolder;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 .button-currency-sm {
     width: 60px;
@@ -45,16 +47,32 @@ body {
     box-shadow: 0px 0px 15px #315e2c;
     color: #364450;
     font-weight: bolder;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
     .button-currency-sm:hover {
         background-color: #d7e493;
-        box-shadow: 0px 0px 8px #315e2c;
+        box-shadow: 0px 0px 13px #315e2c;
+    }
+
+    .button-currency-sm:active {
+        background-color: #d7e493;
+        box-shadow: 0px 0px 0px #315e2c;
+        margin-top: 5px;
+        margin-bottom: 3px;
     }
 
 .button-currency:hover {
     background-color: #d7e493;
-    box-shadow: 0px 0px 8px #315e2c;
+    box-shadow: 0px 0px 13px #315e2c;
+}
+
+.button-currency:active {
+    background-color: #d7e493;
+    box-shadow: 0px 0px 0px #315e2c;
+    margin-top: 5px;
+    margin-bottom: 3px;
 }
 
 .div-padding {
