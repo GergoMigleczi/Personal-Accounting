@@ -39,12 +39,12 @@ body {
     margin-bottom: 4px;
 }
 .button-currency-sm {
-    width: 60px;
+    width: 65px;
     height: 30px;
     text-align: center;
     background-color: #d4e8c4;
     border-radius: 0.2rem;
-    box-shadow: 0px 0px 15px #315e2c;
+    box-shadow: 0px 0px 2px #315e2c;
     color: #364450;
     font-weight: bolder;
     margin-top: 4px;
@@ -53,7 +53,7 @@ body {
 
     .button-currency-sm:hover {
         background-color: #d7e493;
-        box-shadow: 0px 0px 13px #315e2c;
+        box-shadow: 0px 0px 1px #315e2c;
     }
 
     .button-currency-sm:active {
@@ -74,6 +74,27 @@ body {
     margin-top: 5px;
     margin-bottom: 3px;
 }
+
+.btn-shdw {
+    box-shadow: 0px 0px 2px #315e2c;
+    width: 65px;
+    height: 30px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bolder;
+    
+}
+    .btn-shdw:hover {
+        background-color: #c82333;
+        box-shadow: 0px 0px 1px #315e2c;
+    }
+
+    .btn-shdw:active {
+        background-color: #c82333;
+        box-shadow: 0px 0px 0px #315e2c;
+        margin-top: 5px;
+        margin-bottom: 3px;
+    }
 
 .div-padding {
     padding-top: 10px;
@@ -140,15 +161,15 @@ h1 {
 
 thead, tfoot {
     background-color: #354c5b;
-    border: solid 2px #e0dcdc;
+    border: solid 2px white;
     border-collapse: collapse;
 }
 .table-body {
-    background-color: #315e2c;
-    border: solid 2px #e0dcdc;
+    background-color: #e0dcdc;
+    border: solid 2px white;
     border-collapse: collapse;
 }
 .table-border {
-    border: solid 2px #e0dcdc;
+    border: solid 2px white;
     border-collapse: collapse;
 }
