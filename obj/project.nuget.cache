@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b+xwit27AoTerUcgx5keFDCvRqagfjaU6V0SiqrUAwLLFqSMoS5mykI1621chMnvq5Qrl3PDbPSly7xVP5+lYQ==",
+  "dgSpecHash": "hyyDZ/pnefaRJludEhzbNqqQF9qxjqniZr8afv/X4gJ9BK6M5AxRJAy94nctL9Xdrh7gv/jlGKMm4myqdY1HgQ==",
   "success": true,
-  "projectFilePath": "/Users/migleczigergo/Projects/PersonalAccounting/PersonalAccounting.csproj",
+  "projectFilePath": "/Users/migleczigergo/Projects/Azure-Hosting/PersonalAccounting/PersonalAccounting.csproj",
   "expectedPackageFiles": [
     "/Users/migleczigergo/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/migleczigergo/.nuget/packages/microsoft.bcl.hashcode/1.1.1/microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

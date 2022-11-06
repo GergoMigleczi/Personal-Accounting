@@ -1233,11 +1233,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/migleczigergo/Projects/PersonalAccounting/PersonalAccounting.csproj",
+      "projectUniqueName": "/Users/migleczigergo/Projects/Azure-Hosting/PersonalAccounting/PersonalAccounting.csproj",
       "projectName": "PersonalAccounting",
-      "projectPath": "/Users/migleczigergo/Projects/PersonalAccounting/PersonalAccounting.csproj",
+      "projectPath": "/Users/migleczigergo/Projects/Azure-Hosting/PersonalAccounting/PersonalAccounting.csproj",
       "packagesPath": "/Users/migleczigergo/.nuget/packages/",
-      "outputPath": "/Users/migleczigergo/Projects/PersonalAccounting/obj/",
+      "outputPath": "/Users/migleczigergo/Projects/Azure-Hosting/PersonalAccounting/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/migleczigergo/.config/NuGet/NuGet.Config"
