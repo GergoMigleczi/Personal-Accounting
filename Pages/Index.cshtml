@@ -4,57 +4,51 @@
     ViewData["Title"] = "Balance";
 }
 
+<div class="banner">
+    <h1>Balance</h1>
+</div>
 
+<div id="balance" class="flex index-flex wrap">
+    <div class="block">
+        <div class=" div-padding">Pound</div>
+        <div class=" div-padding">£ @Model.GbpTotal</div>
+        <a asp-page="/Currency" asp-route-name="gbp" style="color: black" class="btn">
+            <div class="btn-main div-padding">£ Pound</div>
+        </a>
+    </div>
+    <div class="block">
+        <div class=" div-padding">Forint</div>
+        <div class=" div-padding">Ft @Model.HufTotal</div>
+        <a asp-page="/Currency" asp-route-name="huf" style="color: black" class="btn">
+            <div class="btn-main div-padding">Ft Forint</div>
+        </a>
+    </div>
+    <div class="block">
+        <div class=" div-padding">Euro</div>
+        <div class=" div-padding">€ @Model.EurTotal</div>
+        <a asp-page="/Currency" asp-route-name="eur" style="color: black" class="btn">
+            <div class="btn-main div-padding">€ Euro</div>
+        </a>
+    </div>
+    <div class="block">
+        <div class=" div-padding">US Dollar</div>
+        <div class=" div-padding">$ @Model.UsdTotal</div>
+        <a asp-page="/Currency" asp-route-name="usd" style="color: black" class="btn">
+            <div class="btn-main div-padding">$ US Dollar</div>
+        </a>
+    </div>
+</div>
 
-<table class="body-table">
-    <tr>
-        <td colspan="4">
-            <div class="title-background">
-                <h1>Balance</h1>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td class="currency-block">
-            <div class=" div-padding">Pound</div>
-            <div class=" div-padding">£ @Model.GbpTotal</div>
-            <a asp-page="/Currency" asp-route-name="gbp" style="color: black" class="btn">
-                <div class="button-currency div-padding">£ Pound</div>
-            </a>
-        </td>
-        <td class="currency-block">
-            <div class=" div-padding">Forint</div>
-            <div class=" div-padding">Ft @Model.HufTotal</div>
-            <a asp-page="/Currency" asp-route-name="huf" style="color: black" class="btn">
-                <div class="button-currency div-padding">Ft Forint</div>
-            </a>
-        </td>
-        <td class="currency-block">
-            <div class=" div-padding">Euro</div>
-            <div class=" div-padding">€ @Model.EurTotal</div>
-            <a asp-page="/Currency" asp-route-name="eur" style="color: black" class="btn">
-                <div class="button-currency div-padding">€ Euro</div>
-            </a>
-        </td>
-        <td class="currency-block">
-            <div class=" div-padding">US Dollar</div>
-            <div class=" div-padding">$ @Model.UsdTotal</div>
-            <a asp-page="/Currency" asp-route-name="usd" style="color: black" class="btn">
-                <div class="button-currency div-padding">$ US Dollar</div>
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" class="currency-block">
-            <a asp-page="/AddTransactions" asp-route-name="transactions" style="color: black" class="btn">
-                <div class="button-currency div-padding" style="width: 200px;">Add transaction</div>
-            </a>       
-        </td>
-        <td colspan="2" class="currency-block">
-            <a asp-page="/AddTransactions" asp-route-name="stocks" style="color: black" class="btn">
-                <div class="button-currency div-padding" style="width: 200px;">Add stocks</div>
-            </a>
-        </td>
-    </tr>
-</table>
+<div class="flex index-flex button-wrap">
+    <div class="block button-block">
+        <a asp-page="/AddTransactions" asp-route-name="transactions" class="btn">
+            <div class="btn-main div-padding btn-big" >Add transaction</div>
+        </a>       
+    </div>
+    <div class="block button-block">
+        <a asp-page="/AddTransactions" asp-route-name="stocks" class="btn">
+            <div class="btn-main div-padding btn-big" >Add stocks</div>
+        </a>
+    </div>
+</div>
 

@@ -4,144 +4,138 @@
     ViewData["Title"] = "All Transactions";
 }
 
-<table class="body-table">
-    <tr>
-        <td colspan="2">
-            <div class="title-background-add">
-                <h1 style="text-align: center">All Transactions</h1>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2" class="currency-block" style="width: 100%">
-            <table class="center" style="width: 90%">
-                <thead>
-                    <tr>
-                        <td class="table-border" style="width:10%">
-                            ID
-                        </td>
-                        <td class="table-border" style="width:20%">
-                            Date
-                        </td>
-                        <td class="table-border" style="width: 10%">
-                            Huf
-                        </td>
-                        <td class="table-border" style="width: 10%">
-                            Gbp
-                        </td>
-                        <td class="table-border" style="width: 10%">
-                            Eur
-                        </td>
-                        <td class="table-border" style="width: 10%">
-                            Usd
-                        </td>
-                        <td class="table-border" style="width: 30%">
-                            Description
-                        </td>
-                    </tr>
-                </thead>
-                <tbody class="table-body">
-                    @foreach (var item in Model.Transactions)
-                    {
-                    <tr>
-                        <td class="table-body" style="width: 10%">
-                            @item.ID
-                        </td>
-                        <td class="table-body" style="width: 20%">
-                            @item.Date
-                        </td>
-                        <!-- HUF      HUF     HUF   HUF-->
-                        @if (item.Huf == 0)
-                        {
-                            <td class="table-body" style="width: 10%">
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="table-body" style="width: 10%">
-                                Ft @item.Huf
-                            </td>
-                        }
-                        <!-- EUR      EUR     EUR   EUR-->
-                        @if (item.Eur == 0)
-                        {
-                            <td class="table-body" style="width: 10%">
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="table-body" style="width: 10%">
-                                € @item.Eur
-                            </td>
-                        }
-                        <!-- GBP      GBP     GBP   GBP-->
-                        @if (item.Gbp == 0)
-                        {
-                            <td class="table-body" style="width: 10%">
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="table-body" style="width: 10%">
-                                £ @item.Gbp
-                            </td>
-                        }
-                        <!-- USD      USD     USD   USD-->
-                        @if (item.Usd == 0)
-                        {
-                            <td class="table-body" style="width: 10%">
-                            </td>
-                        }
-                        else
-                        {
-                        <td class="table-body" style="width: 10%">
-                            $ @item.Usd
-                        </td>
-                        }
-                        <td class="table-body" style="flex:1 0 30%">
-                            @item.Description
-                        </td>
-                    </tr>
-                    }
-                    </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2" class="table-border" style="width:30%; text-align: center">
-                                    Total
-                                </td>
-                                <td class="table-border" style="width: 10%">
-                                    Ft @Model.HufTotal
-                                </td>
-                                <td class="table-border" style="width: 10%">
-                                    £ @Model.GbpTotal
-                                </td>
-                                <td class="table-border" style="width: 10%">
-                                    € @Model.EurTotal
-                                </td>
-                                <td class="table-border" style="width: 10%">
-                                    $ @Model.UsdTotal
-                                </td>
-                                <td style="width: 30%">
 
-                                </td>
-                            </tr>
-                        </tfoot>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td class="currency-block" style="width: 50%">
-            <a asp-page="/AddTransactions" asp-route-name="transactions" style="color: black" class="btn">
-                <div class="button-currency div-padding" style="width: 200px;">Add Transaction</div>
-            </a>
-        </td>
-        <td class="currency-block" style="width: 50%">
-            <a asp-page="/Index" style="color: black" class="btn">
-                <div class="button-currency div-padding" style="width: 200px;">Back to Balance</div>
-            </a>
-        </td>
-    </tr>
-</table>
+<div class="banner banner-small long-text">
+    <h1 style="text-align: center">All Transactions</h1>
+</div>
+<div class="block table-block" >
+    <table class="center" style="width: 98%">
+        <thead>
+            <tr>
+                <td class="table-border" style="width:10%">
+                    ID
+                </td>
+                <td class="table-border" style="width:20%">
+                    Date
+                </td>
+                <td class="table-border" style="width: 10%">
+                    Huf
+                </td>
+                <td class="table-border" style="width: 10%">
+                    Gbp
+                </td>
+                <td class="table-border" style="width: 10%">
+                    Eur
+                </td>
+                <td class="table-border" style="width: 10%">
+                    Usd
+                </td>
+                <td class="table-border" style="width: 30%">
+                    Description
+                </td>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            @foreach (var item in Model.Transactions)
+            {
+            <tr>
+                <td class="table-body" style="width: 10%">
+                    @item.ID
+                </td>
+                <td class="table-body" style="width: 20%">
+                    @item.Date
+                </td>
+                <!-- HUF      HUF     HUF   HUF-->
+                @if (item.Huf == 0)
+                {
+                    <td class="table-body" style="width: 10%">
+                    </td>
+                }
+                else
+                {
+                    <td class="table-body" style="width: 10%">
+                        Ft @item.Huf
+                    </td>
+                }
+                <!-- EUR      EUR     EUR   EUR-->
+                @if (item.Eur == 0)
+                {
+                    <td class="table-body" style="width: 10%">
+                    </td>
+                }
+                else
+                {
+                    <td class="table-body" style="width: 10%">
+                        € @item.Eur
+                    </td>
+                }
+                <!-- GBP      GBP     GBP   GBP-->
+                @if (item.Gbp == 0)
+                {
+                    <td class="table-body" style="width: 10%">
+                    </td>
+                }
+                else
+                {
+                    <td class="table-body" style="width: 10%">
+                        £ @item.Gbp
+                    </td>
+                }
+                <!-- USD      USD     USD   USD-->
+                @if (item.Usd == 0)
+                {
+                    <td class="table-body" style="width: 10%">
+                    </td>
+                }
+                else
+                {
+                <td class="table-body" style="width: 10%">
+                    $ @item.Usd
+                </td>
+                }
+                <td class="table-body" style="flex:1 0 30%">
+                    @item.Description
+                </td>
+            </tr>
+            }
+            </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="table-border" style="width:30%; text-align: center">
+                            Total
+                        </td>
+                        <td class="table-border" style="width: 10%">
+                            Ft @Model.HufTotal
+                        </td>
+                        <td class="table-border" style="width: 10%">
+                            £ @Model.GbpTotal
+                        </td>
+                        <td class="table-border" style="width: 10%">
+                            € @Model.EurTotal
+                        </td>
+                        <td class="table-border" style="width: 10%">
+                            $ @Model.UsdTotal
+                        </td>
+                        <td style="width: 30%">
+
+                        </td>
+                    </tr>
+                </tfoot>
+    </table>
+</div>
+<div class="flex index-flex button-wrap">
+    <div class="block button-block">
+        <a asp-page="/AddTransactions" asp-route-name="transactions" class="btn">
+            <div class="btn-main div-padding btn-big">Add Transaction</div>
+        </a>
+    </div>
+    <div class="block button-block">
+        <a asp-page="/Index" class="btn">
+            <div class="btn-main div-padding btn-big">Back to Balance</div>
+        </a>
+    </div>
+</div>
+
 
 
 

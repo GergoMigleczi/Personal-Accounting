@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3rAzCzLF5yyau3ZG0CkdfvZMTnBpBu1LtUPsG2E8/uswPCUQdJ6ffE56S8DbzpsfQBkowJMwUwasOVRyv3O60w==",
+  "dgSpecHash": "b+xwit27AoTerUcgx5keFDCvRqagfjaU6V0SiqrUAwLLFqSMoS5mykI1621chMnvq5Qrl3PDbPSly7xVP5+lYQ==",
   "success": true,
-  "projectFilePath": "/Users/migleczigergo/Projects/Codecademy-ASP.NET/PersonalAccounting/PersonalAccounting.csproj",
+  "projectFilePath": "/Users/migleczigergo/Projects/PersonalAccounting/PersonalAccounting.csproj",
   "expectedPackageFiles": [
     "/Users/migleczigergo/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/migleczigergo/.nuget/packages/microsoft.bcl.hashcode/1.1.1/microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
